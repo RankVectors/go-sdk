@@ -169,9 +169,9 @@ func processProjects(apiClient *rankvectors.APIClient, projectIDs []string) {
 
 ## Support
 
-- **Documentation**: https://docs.rankvectors.com
-- **Support**: support@rankvectors.com
-- **GitHub**: https://github.com/rankvectors
+- **Documentation**: https://rankvectors.com/docs
+- **Support**: tj@rankvectors.com
+- **GitHub**: https://github.com/RankVectors/go-sdk
 
 ## License
 
