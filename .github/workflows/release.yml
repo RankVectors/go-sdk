@@ -1,0 +1,98 @@
+name: Go SDK Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - name: Test
+        run: go test ./...
+
+      - name: Verify module
+        run: go mod tidy && git diff --exit-code
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - name: Get version from tag
+        id: version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Publishing version: $VERSION"
+
+      - name: Verify go.mod version matches tag
+        run: |
+          TAG_VERSION="${{ steps.version.outputs.version }}"
+          MOD_VERSION=$(grep -E '^module' go.mod | sed 's/.*v//' || echo "")
+          if [ -z "$MOD_VERSION" ]; then
+            echo "⚠️ Warning: Could not determine module version from go.mod"
+          else
+            echo "Module version in go.mod: $MOD_VERSION"
+            echo "Tag version: $TAG_VERSION"
+            # Note: For Go modules, the version in go.mod doesn't need to match the tag exactly
+            # The tag itself is what Go uses for versioning
+          fi
+
+      - name: Configure Git for Go module proxy
+        run: |
+          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "git@github.com:"
+
+      - name: Ensure module is properly tagged
+        run: |
+          TAG="${{ github.ref_name }}"
+          echo "Ensuring tag $TAG exists and points to current commit"
+          # The tag already exists from the push event, but we verify it
+          git describe --exact-match --tags HEAD || {
+            echo "⚠️ Warning: Current HEAD is not tagged with $TAG"
+          }
+
+      - name: Test module can be fetched
+        run: |
+          # Verify the module can be fetched by Go's proxy
+          go list -m github.com/rankvectors/rankvectors-go-sdk@${{ github.ref_name }} || {
+            echo "ℹ️ Note: Module may not be immediately available in Go proxy"
+            echo "This is normal for new releases - it may take a few minutes to propagate"
+          }
+
+      - name: Publish notice
+        run: |
+          echo "✅ Go SDK release complete!"
+          echo ""
+          echo "For Go modules, publishing happens automatically when:"
+          echo "  1. A version tag (v*) is pushed to the repository"
+          echo "  2. The module is accessible via GitHub"
+          echo ""
+          echo "Users can install with:"
+          echo "  go get github.com/rankvectors/rankvectors-go-sdk@${{ github.ref_name }}"
+          echo ""
+          echo "The Go module proxy will cache this version within a few minutes."
+

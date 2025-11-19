@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **Total** | **int32** | Total number of implementations | 
 **Succeeded** | **int32** | Number of successful implementations | 
 **Failed** | **int32** | Number of failed implementations | 
-**CreditsUsed** | **float32** | Total credits used | 
+**PagesAffected** | **int32** | Total links/pages affected | 
 
 ## Methods
 
 ### NewImplementationSummary
 
-`func NewImplementationSummary(total int32, succeeded int32, failed int32, creditsUsed float32, ) *ImplementationSummary`
+`func NewImplementationSummary(total int32, succeeded int32, failed int32, pagesAffected int32, ) *ImplementationSummary`
 
 NewImplementationSummary instantiates a new ImplementationSummary object
 This constructor will assign default values to properties that have it defined,
@@ -88,24 +88,24 @@ and a boolean to check if the value has been set.
 SetFailed sets Failed field to given value.
 
 
-### GetCreditsUsed
+### GetPagesAffected
 
-`func (o *ImplementationSummary) GetCreditsUsed() float32`
+`func (o *ImplementationSummary) GetPagesAffected() int32`
 
-GetCreditsUsed returns the CreditsUsed field if non-nil, zero value otherwise.
+GetPagesAffected returns the PagesAffected field if non-nil, zero value otherwise.
 
-### GetCreditsUsedOk
+### GetPagesAffectedOk
 
-`func (o *ImplementationSummary) GetCreditsUsedOk() (*float32, bool)`
+`func (o *ImplementationSummary) GetPagesAffectedOk() (*int32, bool)`
 
-GetCreditsUsedOk returns a tuple with the CreditsUsed field if it's non-nil, zero value otherwise
+GetPagesAffectedOk returns a tuple with the PagesAffected field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreditsUsed
+### SetPagesAffected
 
-`func (o *ImplementationSummary) SetCreditsUsed(v float32)`
+`func (o *ImplementationSummary) SetPagesAffected(v int32)`
 
-SetCreditsUsed sets CreditsUsed field to given value.
+SetPagesAffected sets PagesAffected field to given value.
 
 
 

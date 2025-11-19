@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Usage item identifier | 
 **Action** | **string** | Action performed | 
-**CreditsUsed** | **float32** | Credits used | 
+**PagesAffected** | Pointer to **int32** | Links/pages affected | [optional] 
 **CreatedAt** | **time.Time** | Usage timestamp | 
 **Metadata** | Pointer to **map[string]interface{}** | Additional metadata | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewUsageHistoryItem
 
-`func NewUsageHistoryItem(id string, action string, creditsUsed float32, createdAt time.Time, ) *UsageHistoryItem`
+`func NewUsageHistoryItem(id string, action string, createdAt time.Time, ) *UsageHistoryItem`
 
 NewUsageHistoryItem instantiates a new UsageHistoryItem object
 This constructor will assign default values to properties that have it defined,
@@ -69,25 +69,30 @@ and a boolean to check if the value has been set.
 SetAction sets Action field to given value.
 
 
-### GetCreditsUsed
+### GetPagesAffected
 
-`func (o *UsageHistoryItem) GetCreditsUsed() float32`
+`func (o *UsageHistoryItem) GetPagesAffected() int32`
 
-GetCreditsUsed returns the CreditsUsed field if non-nil, zero value otherwise.
+GetPagesAffected returns the PagesAffected field if non-nil, zero value otherwise.
 
-### GetCreditsUsedOk
+### GetPagesAffectedOk
 
-`func (o *UsageHistoryItem) GetCreditsUsedOk() (*float32, bool)`
+`func (o *UsageHistoryItem) GetPagesAffectedOk() (*int32, bool)`
 
-GetCreditsUsedOk returns a tuple with the CreditsUsed field if it's non-nil, zero value otherwise
+GetPagesAffectedOk returns a tuple with the PagesAffected field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreditsUsed
+### SetPagesAffected
 
-`func (o *UsageHistoryItem) SetCreditsUsed(v float32)`
+`func (o *UsageHistoryItem) SetPagesAffected(v int32)`
 
-SetCreditsUsed sets CreditsUsed field to given value.
+SetPagesAffected sets PagesAffected field to given value.
 
+### HasPagesAffected
+
+`func (o *UsageHistoryItem) HasPagesAffected() bool`
+
+HasPagesAffected returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

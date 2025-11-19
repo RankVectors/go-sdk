@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Status** | **string** | Implementation status | 
 **Platform** | **string** | Platform used | 
 **ImplementationMethod** | Pointer to **string** | Implementation method | [optional] 
-**CreditsUsed** | **float32** | Credits consumed | 
+**CreditsUsed** | Pointer to **float32** | Credits consumed | [optional] 
 **CreatedAt** | **time.Time** | Implementation start timestamp | 
 **CompletedAt** | Pointer to **time.Time** | Implementation completion timestamp | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Platform-specific metadata | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewImplementation
 
-`func NewImplementation(id string, status string, platform string, creditsUsed float32, createdAt time.Time, suggestion Suggestion, ) *Implementation`
+`func NewImplementation(id string, status string, platform string, createdAt time.Time, suggestion Suggestion, ) *Implementation`
 
 NewImplementation instantiates a new Implementation object
 This constructor will assign default values to properties that have it defined,
@@ -138,6 +138,11 @@ and a boolean to check if the value has been set.
 
 SetCreditsUsed sets CreditsUsed field to given value.
 
+### HasCreditsUsed
+
+`func (o *Implementation) HasCreditsUsed() bool`
+
+HasCreditsUsed returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

@@ -1,4 +1,4 @@
-# com.rankvectors\CrawlingAPI
+# \CrawlingAPI
 
 All URIs are relative to *https://api.rankvectors.com*
 

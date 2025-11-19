@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Success** | Pointer to **bool** |  | [optional] 
 **Count** | Pointer to **int32** | Number of suggestions generated | [optional] 
+**AutoApproved** | Pointer to **int32** | Number of suggestions auto-approved | [optional] 
 **Opportunities** | Pointer to [**[]LinkOpportunity**](LinkOpportunity.md) | Top 10 opportunities preview | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetCount sets Count field to given value.
 `func (o *GenerateSuggestions200Response) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
+
+### GetAutoApproved
+
+`func (o *GenerateSuggestions200Response) GetAutoApproved() int32`
+
+GetAutoApproved returns the AutoApproved field if non-nil, zero value otherwise.
+
+### GetAutoApprovedOk
+
+`func (o *GenerateSuggestions200Response) GetAutoApprovedOk() (*int32, bool)`
+
+GetAutoApprovedOk returns a tuple with the AutoApproved field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoApproved
+
+`func (o *GenerateSuggestions200Response) SetAutoApproved(v int32)`
+
+SetAutoApproved sets AutoApproved field to given value.
+
+### HasAutoApproved
+
+`func (o *GenerateSuggestions200Response) HasAutoApproved() bool`
+
+HasAutoApproved returns a boolean if a field has been set.
 
 ### GetOpportunities
 

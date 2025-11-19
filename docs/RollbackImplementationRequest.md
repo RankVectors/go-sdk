@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Reason** | **string** | Reason for rollback | 
-**Credentials** | Pointer to [**CustomCredentials**](CustomCredentials.md) |  | [optional] 
+**Reason** | Pointer to **string** | Optional reason for rollback | [optional] 
 
 ## Methods
 
 ### NewRollbackImplementationRequest
 
-`func NewRollbackImplementationRequest(reason string, ) *RollbackImplementationRequest`
+`func NewRollbackImplementationRequest() *RollbackImplementationRequest`
 
 NewRollbackImplementationRequest instantiates a new RollbackImplementationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -45,31 +44,11 @@ and a boolean to check if the value has been set.
 
 SetReason sets Reason field to given value.
 
+### HasReason
 
-### GetCredentials
+`func (o *RollbackImplementationRequest) HasReason() bool`
 
-`func (o *RollbackImplementationRequest) GetCredentials() CustomCredentials`
-
-GetCredentials returns the Credentials field if non-nil, zero value otherwise.
-
-### GetCredentialsOk
-
-`func (o *RollbackImplementationRequest) GetCredentialsOk() (*CustomCredentials, bool)`
-
-GetCredentialsOk returns a tuple with the Credentials field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredentials
-
-`func (o *RollbackImplementationRequest) SetCredentials(v CustomCredentials)`
-
-SetCredentials sets Credentials field to given value.
-
-### HasCredentials
-
-`func (o *RollbackImplementationRequest) HasCredentials() bool`
-
-HasCredentials returns a boolean if a field has been set.
+HasReason returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

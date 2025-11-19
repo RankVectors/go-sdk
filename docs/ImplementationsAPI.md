@@ -1,4 +1,4 @@
-# com.rankvectors\ImplementationsAPI
+# \ImplementationsAPI
 
 All URIs are relative to *https://api.rankvectors.com*
 
@@ -257,7 +257,7 @@ import (
 func main() {
 	projectId := "proj-123" // string | Unique identifier for the project
 	implementationId := "impl-123" // string | Unique identifier for the implementation
-	rollbackImplementationRequest := *openapiclient.NewRollbackImplementationRequest("Incorrect link placement") // RollbackImplementationRequest | 
+	rollbackImplementationRequest := *openapiclient.NewRollbackImplementationRequest() // RollbackImplementationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

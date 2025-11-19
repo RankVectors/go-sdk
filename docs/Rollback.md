@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Id** | **string** | Unique rollback identifier | 
 **Reason** | **string** | Reason for rollback | 
 **CreatedAt** | **time.Time** | Rollback timestamp | 
-**CreditsRefunded** | Pointer to **float32** | Credits refunded | [optional] 
 
 ## Methods
 
@@ -87,31 +86,6 @@ and a boolean to check if the value has been set.
 
 SetCreatedAt sets CreatedAt field to given value.
 
-
-### GetCreditsRefunded
-
-`func (o *Rollback) GetCreditsRefunded() float32`
-
-GetCreditsRefunded returns the CreditsRefunded field if non-nil, zero value otherwise.
-
-### GetCreditsRefundedOk
-
-`func (o *Rollback) GetCreditsRefundedOk() (*float32, bool)`
-
-GetCreditsRefundedOk returns a tuple with the CreditsRefunded field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreditsRefunded
-
-`func (o *Rollback) SetCreditsRefunded(v float32)`
-
-SetCreditsRefunded sets CreditsRefunded field to given value.
-
-### HasCreditsRefunded
-
-`func (o *Rollback) HasCreditsRefunded() bool`
-
-HasCreditsRefunded returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

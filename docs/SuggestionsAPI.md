@@ -1,13 +1,87 @@
-# com.rankvectors\SuggestionsAPI
+# \SuggestionsAPI
 
 All URIs are relative to *https://api.rankvectors.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**DeleteSuggestion**](SuggestionsAPI.md#DeleteSuggestion) | **Delete** /api/projects/{projectId}/suggestions/{suggestionId} | Delete suggestion
 [**GenerateSuggestions**](SuggestionsAPI.md#GenerateSuggestions) | **Post** /api/projects/{projectId}/suggestions | Generate link suggestions
 [**GetSuggestions**](SuggestionsAPI.md#GetSuggestions) | **Get** /api/projects/{projectId}/suggestions | Get link suggestions
 [**UpdateSuggestion**](SuggestionsAPI.md#UpdateSuggestion) | **Patch** /api/projects/{projectId}/suggestions/{suggestionId} | Update suggestion status
 
+
+
+## DeleteSuggestion
+
+> DeleteSuggestion200Response DeleteSuggestion(ctx, projectId, suggestionId).Execute()
+
+Delete suggestion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/rankvectors/rankvectors-go-sdk"
+)
+
+func main() {
+	projectId := "proj-123" // string | Unique identifier for the project
+	suggestionId := "sugg-123" // string | Unique identifier for the suggestion
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SuggestionsAPI.DeleteSuggestion(context.Background(), projectId, suggestionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SuggestionsAPI.DeleteSuggestion``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteSuggestion`: DeleteSuggestion200Response
+	fmt.Fprintf(os.Stdout, "Response from `SuggestionsAPI.DeleteSuggestion`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Unique identifier for the project | 
+**suggestionId** | **string** | Unique identifier for the suggestion | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteSuggestionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**DeleteSuggestion200Response**](DeleteSuggestion200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GenerateSuggestions

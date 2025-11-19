@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Success** | Pointer to **bool** |  | [optional] 
-**CreditsRefunded** | Pointer to **float32** | Credits refunded (50% of implementation cost) | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -51,31 +50,6 @@ SetSuccess sets Success field to given value.
 `func (o *RollbackImplementation200Response) HasSuccess() bool`
 
 HasSuccess returns a boolean if a field has been set.
-
-### GetCreditsRefunded
-
-`func (o *RollbackImplementation200Response) GetCreditsRefunded() float32`
-
-GetCreditsRefunded returns the CreditsRefunded field if non-nil, zero value otherwise.
-
-### GetCreditsRefundedOk
-
-`func (o *RollbackImplementation200Response) GetCreditsRefundedOk() (*float32, bool)`
-
-GetCreditsRefundedOk returns a tuple with the CreditsRefunded field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreditsRefunded
-
-`func (o *RollbackImplementation200Response) SetCreditsRefunded(v float32)`
-
-SetCreditsRefunded sets CreditsRefunded field to given value.
-
-### HasCreditsRefunded
-
-`func (o *RollbackImplementation200Response) HasCreditsRefunded() bool`
-
-HasCreditsRefunded returns a boolean if a field has been set.
 
 ### GetMessage
 

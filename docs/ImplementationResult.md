@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Success** | **bool** | Whether implementation succeeded | 
 **ImplementationId** | Pointer to **string** | Implementation identifier | [optional] 
-**CreditsUsed** | Pointer to **float32** | Credits consumed | [optional] 
+**PagesAffected** | Pointer to **int32** | Number of links/pages modified in this operation | [optional] 
 **Error** | Pointer to **string** | Error message if failed | [optional] 
 
 ## Methods
@@ -73,30 +73,30 @@ SetImplementationId sets ImplementationId field to given value.
 
 HasImplementationId returns a boolean if a field has been set.
 
-### GetCreditsUsed
+### GetPagesAffected
 
-`func (o *ImplementationResult) GetCreditsUsed() float32`
+`func (o *ImplementationResult) GetPagesAffected() int32`
 
-GetCreditsUsed returns the CreditsUsed field if non-nil, zero value otherwise.
+GetPagesAffected returns the PagesAffected field if non-nil, zero value otherwise.
 
-### GetCreditsUsedOk
+### GetPagesAffectedOk
 
-`func (o *ImplementationResult) GetCreditsUsedOk() (*float32, bool)`
+`func (o *ImplementationResult) GetPagesAffectedOk() (*int32, bool)`
 
-GetCreditsUsedOk returns a tuple with the CreditsUsed field if it's non-nil, zero value otherwise
+GetPagesAffectedOk returns a tuple with the PagesAffected field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreditsUsed
+### SetPagesAffected
 
-`func (o *ImplementationResult) SetCreditsUsed(v float32)`
+`func (o *ImplementationResult) SetPagesAffected(v int32)`
 
-SetCreditsUsed sets CreditsUsed field to given value.
+SetPagesAffected sets PagesAffected field to given value.
 
-### HasCreditsUsed
+### HasPagesAffected
 
-`func (o *ImplementationResult) HasCreditsUsed() bool`
+`func (o *ImplementationResult) HasPagesAffected() bool`
 
-HasCreditsUsed returns a boolean if a field has been set.
+HasPagesAffected returns a boolean if a field has been set.
 
 ### GetError
 
